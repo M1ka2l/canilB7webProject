@@ -1,14 +1,16 @@
 {{>partials/head}}
-<section class="banner" style="background-image: url('images/allanimals.jpg')">Todos os animais</section>
-<h2>Todos os animais disponíveis para adoção</h2>
-
+    {{#banner}}
+        <section class="banner" style="background-image: url('images/{{backImage}}')">Todos os {{type}}</section>
+        <h2>{{info}}</h2>
+    {{/banner}}
 <div class="container list">
-    <div class="item">
-        <img src="images/pastor-alemao.jpg" class="item--image" />
-        <div class="item--name">Pastor-alemão</div>
-        <div class="item--color">Cor: Amarelo e Preto</div>
-        <div class="item--genre">Gênero: Masculino</div>
-    </div>
+    {{#list}}
+        <div class="item">
+            <img src="images/{{image}}" class="item--image" />
+            <div class="item--name">{{name}}</div>
+            <div class="item--color">Cor: {{color}}</div>
+            <div class="item--genre">Gênero: {{sex}}</div>
+        </div>
+    {{/list}}
 </div>
-
 {{>partials/footer}}
